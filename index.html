@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lista.css">
+    <link rel="stylesheet" href="calendario.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="model.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+NKo+Unjoined:wght@400;600&family=Noto+Serif+NP+Hmong:wght@400;600&family=Quicksand:wght@300;400&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>To do List</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <input class="input-task" type="text" placeholder="🐾 Digite aqui🐾">
+        <!--model-->
+        <div id="demo-model" class="model">
+            <div class="contente">
+              <!-- <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              </p> -->
+              <select id="select-options" class="select">
+                
+
+            </select>
+           
+            <button class="shut" onclick="fechaModel()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </button>
+
+            </div>
+          </div>
+        
+        <button class="botao-days" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-calendar-heart" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Zm7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+            </svg>
+        </button>
+
+        <button class="button-add-task"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                <path
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- modal -->
+    <div id="demo-modal" class="modal hidden">
+        <div class="content">
+            <!-- Deixar esse campo invisivel usando o CSS-->
+            <input type="text" name="codigo" id="codigo">
+            <p>
+                Quer um bolo simples, bem gostoso e fofinho para o café da tarde? Encontrou! Confira como fazer essa receita de bolo simples, também conhecido como bolo de farinha de trigo. Ele cai muito bem com um café quentinho!
+            </p>
+
+            <div class="botaozao">
+                <img src="img/checked.png" alt="verificado" class="verificado" onclick="concluirTarefa()">
+                <img src="img/trash.png" alt="lixo" class="trash" onclick="apagarItem()" data-posicao="0">
+            </div>
+
+
+
+            <button class="close" onclick="fechaModal()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- calendário -->
+    <section>
+        <div class="box">
+            <div class="dentro">
+                <div class="month">
+                    <button class="prior" id="prior-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                        </svg></button>
+
+                    <div class="date">
+                        <h1 class='header'>Nome do Mes</h1>
+                        <h2 class='header'>Ano</h2>
+                        <p>Descricao do Dia Atual</p>
+                    </div>
+
+                    <button class="next" id="next-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                        </svg></button>
+                </div>
+                <div class="weekdays">
+                    <div class="weekday sunday">
+                        <div class="name">Dom</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                    <div class="weekday monday">
+                        <div class="name">Seg</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                    <div class="weekday tuesday">
+                        <div class="name">Ter</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                    <div class="weekday wednesday">
+                        <div class="name">Qua</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                    <div class="weekday thursday ">
+                        <div class="name">Qui</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                    <div class="weekday friday">
+                        <div class="name">Sex</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                    <div class="weekday saturday">
+                        <div class="name">Sab</div>
+                        <div class="number"></div>
+                        <div class="list-tasks"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="moment.min.js"></script>
+    <script src="moment-with-locales.min.js"></script>
+    <script src="lista.js"></script>
+    <script src="calendario.js"></script>
+
+</body>
+
+</html>

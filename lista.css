@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans NKo Unjoined', 'Noto Serif NP Hmong', 'Quicksand', 'Roboto', sans-serif;
+    outline: none;
+}
+
+body {
+    background: url(./img/destino-de-viagem-indiano-lindo-atraente.jpg);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.205);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.493);
+    background-color: #ff009000;
+    width: 500px;
+    padding: 20px;
+    margin: 100px auto 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+}
+
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-task {
+    border: none;
+    border-radius: 1rem;
+    width: 348px;
+    height: 40px;
+    padding-left: 10px;
+    background-color: #f0bef0;
+}
+
+.input-task::placeholder {
+    color: rgba(255, 255, 255, 0.904);
+}
+
+.button-add-task {
+    border: none;
+    border-radius: 1rem;
+    width: 50px;
+    height: 39px;
+    background-color: #d459a1a2;
+    color: #000000;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.button-add-task:hover {
+    opacity: 0.8;
+}
+
+.button-add-task:active {
+    opacity: 0.6;
+}
+
+.task {
+    background-color: #f2f2f2;
+    box-shadow: 1px 4px 10px #c94eb8;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 1rem;
+    margin-bottom: 9px;
+    cursor: pointer;
+    flex-direction: row;
+    /*margin-right: 5rem;*/
+}
+
+
+.task p {
+    font-size: 16px;
+    max-width: 90%;
+    word-wrap: break-word;
+    flex: 1;
+}
+
+.task img {
+    height: 25px;
+    margin-right: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.task img:last-child {
+    margin-right: 0;
+}
+
+.task:hover img {
+    opacity: 1;
+}
+
+.done {
+    background-color: #eca9d0a2;
+    text-decoration: line-through;
+}
